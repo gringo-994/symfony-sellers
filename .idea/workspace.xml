@@ -25,51 +25,37 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b7a63b5-9f96-47eb-a3cf-d4337f0f461d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/junior-php-test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/preload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/mariadb/sql/01_create_databases.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/nginx/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Analyzer/SellersJsonAnalyzerInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Analyzer/SellersJsonSimpleAnalyzer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Seller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/SellerRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Analyzer/SellersJsonSimpleAnalyzerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
+    <list default="true" id="1b7a63b5-9f96-47eb-a3cf-d4337f0f461d" name="Default Changelist" comment="seller model created">
+      <change afterPath="$PROJECT_DIR$/Utils/ArrayUtilsInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/ArrayUtilsTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/CastUtilsInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/CastUtilsTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/Utils.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/test/validator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/validator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210227183640.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/AbstractException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/ArrayException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/ValidationException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Globals/Globals.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/SellerResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer/Normalizer/AbstractNormalizer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer/Normalizer/ParentSellerDenormalizer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer/Normalizer/SellerDenormalizer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer/SerializableInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer/SerializerAppInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer/SerializerTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/junior-php-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/junior-php-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SellerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SellerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +138,20 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/serializer" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1n3ulBEvc3zNUdipN6aL9PvZY6t" />
@@ -163,13 +163,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Serializer/Normalizer" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Serializer/Normalizer" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Serializer/Normalizer" />
+      <recent name="$PROJECT_DIR$/src/Serializer" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -184,8 +191,18 @@
       <workItem from="1614425297902" duration="1225000" />
       <workItem from="1614427194946" duration="1985000" />
       <workItem from="1614433159075" duration="203000" />
-      <workItem from="1614433371119" duration="732000" />
+      <workItem from="1614433371119" duration="22541000" />
+      <workItem from="1614465885546" duration="4165000" />
+      <workItem from="1614470159285" duration="145000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1614434259936</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614434259936</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,22 +232,59 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="seller model created" />
+    <option name="LAST_COMMIT_MESSAGE" value="seller model created" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="290" y="405" width="1397" height="294" key="#SQL_Dialects" timestamp="1614470061445">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="290" y="405" width="1397" height="294" key="#SQL_Dialects/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614470061445" />
     <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614428080997">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614428080997" />
-    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1614433766841">
+    <state x="768" y="262" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1614465646886">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614433766841" />
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1614434102380">
+    <state x="768" y="262" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614465646886" />
+    <state x="736" y="339" width="504" height="426" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614469588135">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614434102380" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1614433954033">
+    <state x="736" y="339" width="504" height="426" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614469588135" />
+    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614452881892">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614433954033" />
+    <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614452881892" />
+    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1614470281845">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614470281845" />
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1614470255468">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614470255468" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1614451596323">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614451596323" />
+    <state x="1031" y="236" width="713" height="561" key="NewPhpClassDialog" timestamp="1614465706600">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="1031" y="236" width="713" height="561" key="NewPhpClassDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614465706600" />
+    <state x="482" y="187" key="SettingsEditor" timestamp="1614470303656">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614470303656" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1614441397687">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614441397687" />
+    <state x="826" y="313" width="325" height="478" key="refactoring.ChangeSignatureDialog" timestamp="1614452121253">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="826" y="313" width="325" height="478" key="refactoring.ChangeSignatureDialog/67.27.1853.1053/1920.0.1680.1050@67.27.1853.1053" timestamp="1614452121253" />
   </component>
 </project>
