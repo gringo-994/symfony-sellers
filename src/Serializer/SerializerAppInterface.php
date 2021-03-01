@@ -8,17 +8,12 @@ interface SerializerAppInterface
 {
     /**
      * @param $data
-     * @param array $context
-     * @return string
      */
-    public function serialize($data, $context = array()): string;
+    public function serialize($data, array $context = []): string;
 
     /**
      * @param $data
      * @param $type
-     * @param array $context
-     * @return SerializableInterface
      */
-    public function deserialize($data, $type, $context = array()): SerializableInterface;
-
+    public function deserialize($data, string $type, array $context = []): SerializeInterface;
 }

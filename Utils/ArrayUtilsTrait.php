@@ -1,6 +1,6 @@
 <?php
-declare(strict_types=1);
 
+declare(strict_types=1);
 
 use App\Exception\ArrayException;
 
@@ -19,7 +19,7 @@ trait ArrayUtilsTrait
      */
     public static function getValueOrError(array $data, string $key)
     {
-        if (array_key_exists($key, $data) && $data[$key] !== null) {
+        if (array_key_exists($key, $data) && null !== $data[$key]) {
             return $data[$key];
         }
         throw new ArrayException([$key => 'the value must be defined']);

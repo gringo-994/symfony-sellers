@@ -20,7 +20,6 @@ class SellersJsonSimpleAnalyzerTest extends TestCase
      */
     public function testAnalyzeWhenNotValidVersion(): void
     {
-
     }
 
     /**
@@ -30,7 +29,6 @@ class SellersJsonSimpleAnalyzerTest extends TestCase
      */
     public function testAnalyzeWhenSellerHasNotValidType(): void
     {
-
     }
 
     /**
@@ -40,6 +38,5 @@ class SellersJsonSimpleAnalyzerTest extends TestCase
      */
     public function testAnalyze(): void
     {
-
     }
 }

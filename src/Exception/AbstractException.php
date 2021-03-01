@@ -1,13 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Exception;
 
-
 use Exception;
 use Throwable;
 
-class AbstractException extends Exception
+abstract class AbstractException extends Exception
 {
     /**
      * @var array|mixed
@@ -17,7 +17,7 @@ class AbstractException extends Exception
     /**
      * {@inheritdoc}
      */
-    public function __construct($errors = array(), $message = "", $code = 0, Throwable $previous = null)
+    public function __construct($errors = [], $message = '', $code = 0, Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
         $this->errors = $errors;
@@ -30,5 +30,4 @@ class AbstractException extends Exception
     {
         return $this->errors;
     }
-
 }

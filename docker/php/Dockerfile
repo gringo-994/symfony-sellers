@@ -8,7 +8,10 @@ RUN apk add --no-cache openssl && \
         autoconf \
         g++ \
         make \
-        openssl-dev
+        openssl-dev \
+        bash
+
+RUN wget https://get.symfony.com/cli/installer && bash installer --install-dir=/usr/bin && rm installer
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

@@ -15,7 +15,6 @@ class SellerRepository extends ServiceEntityRepository
 {
     /**
      * Constructor.
-     * @param ManagerRegistry $registry
      */
     public function __construct(ManagerRegistry $registry)
     {

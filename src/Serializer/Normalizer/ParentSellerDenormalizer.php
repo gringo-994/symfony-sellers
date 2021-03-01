@@ -1,26 +1,25 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace App\Serializer\Normalizer;
-
 
 use App\Entity\Seller;
 use App\Exception\ArrayException;
 use App\Exception\ValidationException;
-use App\Model\SellerResponse;
+use App\Model\Response\SellerResponse;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 class ParentSellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
 {
-    const ERROR_TAG="parent_object";
     /**
      * {@inheritdoc}
+     *
      * @throws ValidationException
      */
     public function denormalize($data, string $type, string $format = null, array $context = [])
     {
-        /** @var Seller[] $sellers */
+        /* @var Seller[] $sellers */
         try {
             $obj = new SellerResponse();
             $obj->setContactEmail(self::getValueOrNull($data, 'contact_email'));
@@ -29,10 +28,10 @@ class ParentSellerDenormalizer extends AbstractNormalizer implements Denormalize
 
             $sellers = $this->deserialize(self::getValueOrError($data, 'sellers'), Seller::class);
             $obj->setSellers($sellers);
-
         } catch (ArrayException $e) {
-            throw new ValidationException([self::ERROR_TAG => $e->getErrors()]);
+            throw new ValidationException($e->getErrors());
         }
+
         return $obj;
     }
 
@@ -41,6 +40,6 @@ class ParentSellerDenormalizer extends AbstractNormalizer implements Denormalize
      */
     public function supportsDenormalization($data, string $type, string $format = null)
     {
-        return $type === SellerResponse::class;
+        return SellerResponse::class === $type;
     }
 }
