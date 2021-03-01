@@ -17,6 +17,7 @@ class SellerUpdateMessage implements MessageBusAppInterface
     /**
      * SellerUpdateMessage constructor.
      *
+     * @param string $id
      * @param Seller[] $sellers
      */
     public function __construct(string $id, array $sellers)
@@ -25,11 +26,17 @@ class SellerUpdateMessage implements MessageBusAppInterface
         $this->sellers = $sellers;
     }
 
+    /**
+     * @return string
+     */
     public function getId(): string
     {
         return $this->id;
     }
 
+    /**
+     * @param string $id
+     */
     public function setId(string $id): void
     {
         $this->id = $id;

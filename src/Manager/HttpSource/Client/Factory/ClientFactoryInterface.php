@@ -11,5 +11,9 @@ interface ClientFactoryInterface
 {
     public const CLIENT_SELLER = 'client_seller';
 
+    /**
+     * @param RequestInterface $request
+     * @return ClientInterface
+     */
     public function create(RequestInterface $request): ClientInterface;
 }

@@ -18,6 +18,7 @@ abstract class AbstractApiController extends AbstractController implements Seria
 
     /**
      * AbstractApiController constructor.
+     * @param SerializerInterface $serializer
      */
     public function __construct(SerializerInterface $serializer)
     {

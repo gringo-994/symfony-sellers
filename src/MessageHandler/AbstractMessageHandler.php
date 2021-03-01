@@ -12,6 +12,11 @@ class AbstractMessageHandler
     use LoggerTrait;
     use SerializerTrait;
 
+    /**
+     * AbstractMessageHandler constructor.
+     * @param LoggerInterface $logger
+     * @param SerializerInterface $serializer
+     */
     public function __construct(LoggerInterface $logger, SerializerInterface $serializer)
     {
         $this->logger = $logger;

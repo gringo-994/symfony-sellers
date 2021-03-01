@@ -2,6 +2,7 @@
 
 namespace App\Manager\Seller;
 
+use App\Exception\ValidationException;
 use App\Manager\AbstractManager;
 use App\Manager\Bus\BusInterface;
 use App\Manager\Bus\BusTrait;
@@ -17,13 +18,21 @@ class SellerManager extends AbstractManager implements SellerManagerRequestAndSt
     use SellerManagerTrait;
     use BusTrait;
 
+    /**
+     * SellerManager constructor.
+     * @param ValidatorInterface $validator
+     * @param LoggerInterface $logger
+     * @param SerializerInterface $serializer
+     * @param SellerManagerHttpInterface $sellerManager
+     * @param MessageBusInterface $bus
+     */
     public function __construct(
         ValidatorInterface $validator,
         LoggerInterface $logger,
         SerializerInterface $serializer,
         SellerManagerHttpInterface $sellerManager,
-        MessageBusInterface $bus)
-    {
+        MessageBusInterface $bus
+    ) {
         parent::__construct($validator, $logger, $serializer);
         $this->sellerManager = $sellerManager;
         $this->bus = $bus;
@@ -31,6 +40,7 @@ class SellerManager extends AbstractManager implements SellerManagerRequestAndSt
 
     /**
      * {@inheritDoc}
+     * @throws ValidationException
      */
     public function getSellersDomain(string $domain): array
     {
@@ -39,6 +49,7 @@ class SellerManager extends AbstractManager implements SellerManagerRequestAndSt
 
     /**
      * {@inheritDoc}
+     * @throws ValidationException
      */
     public function requestSellersAndStore(string $domain): array
     {

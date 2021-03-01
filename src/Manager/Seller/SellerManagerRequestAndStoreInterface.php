@@ -10,6 +10,7 @@ use App\Manager\SellerManagerInterface;
 interface SellerManagerRequestAndStoreInterface extends SellerManagerInterface
 {
     /**
+     * @param string $domain
      * @return Seller[]
      */
     public function requestSellersAndStore(string $domain): array;

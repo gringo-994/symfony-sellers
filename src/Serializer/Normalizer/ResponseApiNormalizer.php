@@ -9,6 +9,9 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class ResponseApiNormalizer extends AbstractNormalizer implements NormalizerInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public function normalize($object, string $format = null, array $context = [])
     {
         /** @var ResponseApi $object */
@@ -22,6 +25,9 @@ class ResponseApiNormalizer extends AbstractNormalizer implements NormalizerInte
         return $data;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function supportsNormalization($data, string $format = null)
     {
         return $data instanceof ResponseApi;

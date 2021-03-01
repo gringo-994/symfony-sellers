@@ -16,6 +16,8 @@ interface ManagerEntityInterface
     public function findAll(): array;
 
     /**
+     * @param array $criteria
+     * @param array|null $orderBy
      * @param null $limit
      * @param null $offset
      *
@@ -29,13 +31,16 @@ interface ManagerEntityInterface
     public function find($id): ?EntityInterface;
 
     /**
+     * @param Criteria $query
      * @return EntityInterface[]
      */
     public function matching(Criteria $query): array;
 
     /**
+     * @param EntityInterface $entity
      * @param false $flush
      *
+     * @return EntityInterface
      * @throws ValidationException
      */
     public function persist(EntityInterface $entity, $flush = false): EntityInterface;

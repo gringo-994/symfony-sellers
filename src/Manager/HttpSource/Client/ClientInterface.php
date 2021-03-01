@@ -9,5 +9,15 @@ use Psr\Http\Message\ResponseInterface;
 
 interface ClientInterface
 {
-    public function request(EndpointInterface $endpoint, array $pathParams = [], array $queryParams = []): ResponseInterface;
+    /**
+     * @param EndpointInterface $endpoint
+     * @param array $pathParams
+     * @param array $queryParams
+     * @return ResponseInterface
+     */
+    public function request(
+        EndpointInterface $endpoint,
+        array $pathParams = [],
+        array $queryParams = []
+    ): ResponseInterface;
 }

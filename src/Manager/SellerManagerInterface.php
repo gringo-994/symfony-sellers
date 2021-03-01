@@ -9,6 +9,7 @@ use App\Entity\Seller;
 interface SellerManagerInterface
 {
     /**
+     * @param string $domain
      * @return Seller[]
      */
     public function getSellersDomain(string $domain): array;

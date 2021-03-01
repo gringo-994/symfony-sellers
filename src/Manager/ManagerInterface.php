@@ -10,6 +10,7 @@ interface ManagerInterface
      * @param $obj
      * @param null $groups
      * @param null $constraint
+     * @return bool
      */
     public function handleValidation($obj, $groups = null, $constraint = null): bool;
 }

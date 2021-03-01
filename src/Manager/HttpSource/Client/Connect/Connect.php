@@ -11,10 +11,14 @@ use Psr\Http\Message\ResponseInterface;
 
 class Connect implements ConnectInterface
 {
+    /**
+     * @var string
+     */
     private string $host;
 
     /**
      * Connect constructor.
+     * @param string $host
      */
     public function __construct(string $host)
     {
@@ -39,8 +43,8 @@ class Connect implements ConnectInterface
         string $uri,
         array $headers = [],
         array $query = [],
-        array $options = []): ResponseInterface
-    {
+        array $options = []
+    ): ResponseInterface {
         if (!empty($headers)) {
             $options['headers'] = $headers;
         }

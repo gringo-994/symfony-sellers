@@ -9,6 +9,10 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class SellerNormalizer extends AbstractNormalizer implements NormalizerInterface
 {
+
+    /**
+     * {@inheritdoc}
+     */
     public function normalize($object, string $format = null, array $context = [])
     {
         /** @var Seller $object */
@@ -24,7 +28,9 @@ class SellerNormalizer extends AbstractNormalizer implements NormalizerInterface
 
         return $data;
     }
-
+    /**
+     * {@inheritdoc}
+     */
     public function supportsNormalization($data, string $format = null)
     {
         return $data instanceof Seller;

@@ -11,9 +11,14 @@ use Psr\Http\Message\ResponseInterface;
 interface MangerHttpInterface
 {
     /**
-     * @param bool $ignoreExceptions when ignoredException is true exception are logged but not passes through the method. recommended for commands
+     * @param RequestInterface $request
+     * @param bool $ignoreExceptions when *ignoredException is true exception
+     *                                    *are logged but not passes through the method. recommended for commands
      *
      * @return ResponseInterface|null
      */
-    public function requestAndValidateResponse(RequestInterface $request, $ignoreExceptions = false): ?SerializeInterface;
+    public function requestAndValidateResponse(
+        RequestInterface $request,
+        $ignoreExceptions = false
+    ): ?SerializeInterface;
 }

@@ -11,10 +11,14 @@ use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractClient implements ClientInterface
 {
+    /**
+     * @var ConnectInterface
+     */
     private ConnectInterface $connect;
 
     /**
      * AbstractClient constructor.
+     * @param ConnectInterface $connect
      */
     public function __construct(ConnectInterface $connect)
     {
@@ -24,8 +28,11 @@ abstract class AbstractClient implements ClientInterface
     /**
      * {@inheritDoc}
      */
-    public function request(EndpointInterface $endpoint, array $pathParams = [], array $queryParams = []): ResponseInterface
-    {
+    public function request(
+        EndpointInterface $endpoint,
+        array $pathParams = [],
+        array $queryParams = []
+    ): ResponseInterface {
         if (!empty($pathParams)) {
             $endpoint->addPathParams($pathParams);
         }

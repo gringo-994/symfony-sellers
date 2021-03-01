@@ -16,10 +16,24 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 abstract class AbstractHttpManager extends AbstractManager implements MangerHttpInterface
 {
+    /**
+     * @var ClientFactoryInterface
+     */
     private ClientFactoryInterface $clientFactory;
 
-    public function __construct(ClientFactoryInterface $clientFactory, ValidatorInterface $validator, LoggerInterface $logger, SerializerInterface $serialize)
-    {
+    /**
+     * AbstractHttpManager constructor.
+     * @param ClientFactoryInterface $clientFactory
+     * @param ValidatorInterface $validator
+     * @param LoggerInterface $logger
+     * @param SerializerInterface $serialize
+     */
+    public function __construct(
+        ClientFactoryInterface $clientFactory,
+        ValidatorInterface $validator,
+        LoggerInterface $logger,
+        SerializerInterface $serialize
+    ) {
         parent::__construct($validator, $logger, $serialize);
         $this->clientFactory = $clientFactory;
     }
@@ -29,8 +43,10 @@ abstract class AbstractHttpManager extends AbstractManager implements MangerHttp
      *
      * @throws ValidationException
      */
-    public function requestAndValidateResponse(RequestInterface $request, $ignoreExceptions = false): ?SerializeInterface
-    {
+    public function requestAndValidateResponse(
+        RequestInterface $request,
+        $ignoreExceptions = false
+    ): ?SerializeInterface {
         try {
             $client = $this->clientFactory->create($request);
             $service = $request->getClientService();

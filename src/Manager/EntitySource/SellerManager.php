@@ -14,12 +14,19 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class SellerManager extends AbstractEntityManager implements SellerEntityManagerInterface
 {
+    /**
+     * SellerManager constructor.
+     * @param ValidatorInterface $validator
+     * @param LoggerInterface $logger
+     * @param EntityManagerInterface $em
+     * @param SerializerInterface $serializer
+     */
     public function __construct(
         ValidatorInterface $validator,
         LoggerInterface $logger,
         EntityManagerInterface $em,
-        SerializerInterface $serializer)
-    {
+        SerializerInterface $serializer
+    ) {
         parent::__construct($validator, $logger, $em, $serializer, Seller::class);
     }
 

@@ -16,6 +16,7 @@ abstract class AbstractListener implements EventSubscriberInterface, ResponseApi
 
     /**
      * AbstractListener constructor.
+     * @param SerializerInterface $serializer
      */
     public function __construct(SerializerInterface $serializer)
     {

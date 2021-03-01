@@ -18,6 +18,8 @@ class SellersController extends AbstractApiController implements SellersControll
 
     /**
      * SellersController constructor.
+     * @param SerializerInterface $serializer
+     * @param SellerFactoryManagerInterface $factoryManager
      */
     public function __construct(SerializerInterface $serializer, SellerFactoryManagerInterface $factoryManager)
     {
@@ -28,7 +30,6 @@ class SellersController extends AbstractApiController implements SellersControll
     /**
      * @Rest("sellers/check-in", methods={"GET", "HEAD"} ,name="sellers_check_in")
      * {@inheritDoc}
-     *
      * @throws ValidationException
      */
     public function sellersCheckIn(Request $request): Response

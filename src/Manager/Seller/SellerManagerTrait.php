@@ -12,6 +12,8 @@ trait SellerManagerTrait
     protected SellerManagerInterface $sellerManager;
 
     /**
+     * @param string $domain
+     * @return array
      * @throws ValidationException
      */
     private function getSellers(string $domain): array

@@ -11,15 +11,33 @@ interface EndpointInterface
      */
     public function addPathParams(array $pathParams): void;
 
+    /**
+     * @return string
+     */
     public function buildUri(): string;
 
+    /**
+     * @return string
+     */
     public function getMethod(): string;
 
+    /**
+     * @return array
+     */
     public function getHeaders(): array;
 
+    /**
+     * @return array
+     */
     public function getOptions(): array;
 
+    /**
+     * @return bool
+     */
     public function getIsMock(): bool;
 
+    /**
+     * @return string
+     */
     public function getMock(): string;
 }

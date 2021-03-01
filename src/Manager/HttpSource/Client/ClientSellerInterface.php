@@ -8,7 +8,12 @@ use Psr\Http\Message\ResponseInterface;
 
 interface ClientSellerInterface
 {
-    const GET_SELLERS = 'requestSeller';
+    public const GET_SELLERS = 'requestSeller';
 
+    /**
+     * @param array $pathParams
+     * @param array $queryParams
+     * @return ResponseInterface
+     */
     public function requestSeller(array $pathParams = [], array $queryParams = []): ResponseInterface;
 }

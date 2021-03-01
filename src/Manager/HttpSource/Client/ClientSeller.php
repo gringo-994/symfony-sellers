@@ -10,11 +10,18 @@ use Psr\Http\Message\ResponseInterface;
 
 class ClientSeller extends AbstractClient implements ClientSellerInterface
 {
+    /**
+     * ClientSeller constructor.
+     * @param ConnectInterface $connect
+     */
     public function __construct(ConnectInterface $connect)
     {
         parent::__construct($connect);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function requestSeller(array $pathParams = [], array $queryParams = []): ResponseInterface
     {
         return parent::request(new EndpointSeller(), $pathParams, $queryParams);

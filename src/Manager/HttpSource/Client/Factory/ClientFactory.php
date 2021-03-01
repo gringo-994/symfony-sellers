@@ -23,9 +23,9 @@ class ClientFactory implements ClientFactoryInterface
                 if ($request instanceof RequestSellers) {
                     return new ClientSeller(new Connect($request->getDomain()));
                 }
-                throw new LogicException('request must be '.RequestSellers::class);
+                throw new LogicException('request must be ' . RequestSellers::class);
             default:
-                throw new LogicException('type '.$request->getType().' is not defined');
+                throw new LogicException('type ' . $request->getType() . ' is not defined');
         }
     }
 }

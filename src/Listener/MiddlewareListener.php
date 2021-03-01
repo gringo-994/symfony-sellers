@@ -28,6 +28,9 @@ class MiddlewareListener extends AbstractListener
         ];
     }
 
+    /**
+     * @param ExceptionEvent $event
+     */
     public function onKernelException(ExceptionEvent $event): void
     {
         $e = $event->getThrowable();
@@ -62,6 +65,9 @@ class MiddlewareListener extends AbstractListener
         }
     }
 
+    /**
+     * @param ResponseEvent $event
+     */
     public function onKernelResponse(ResponseEvent $event): void
     {
         if (!$event->isMasterRequest()) {
@@ -71,6 +77,9 @@ class MiddlewareListener extends AbstractListener
         $this->setResponseCors($event->getResponse());
     }
 
+    /**
+     * @param Response|null $response
+     */
     private function setResponseCors(?Response $response)
     {
         if ($response) {

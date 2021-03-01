@@ -18,15 +18,22 @@ class SellerUpdateHandler extends AbstractMessageHandler
 
     /**
      * SellerUpdateHandler constructor.
+     * @param LoggerInterface $logger
+     * @param SellerEntityManagerInterface $sellerEntityManager
+     * @param SerializerInterface $serializer
      */
-    public function __construct(LoggerInterface $logger, SellerEntityManagerInterface $sellerEntityManager, SerializerInterface $serializer)
-    {
+    public function __construct(
+        LoggerInterface $logger,
+        SellerEntityManagerInterface $sellerEntityManager,
+        SerializerInterface $serializer
+    ) {
         parent::__construct($logger, $serializer);
 
         $this->sellerEntityManager = $sellerEntityManager;
     }
 
     /**
+     * @param SellerUpdateMessage $message
      * @throws Exception
      */
     public function __invoke(SellerUpdateMessage $message)
@@ -34,15 +41,14 @@ class SellerUpdateHandler extends AbstractMessageHandler
         try {
             $this->sellerEntityManager->massiveInsertion($message->getSellers());
         } catch (Exception $ex) {
-            $extras = [];
             if ($ex instanceof ValidationException) {
-                $extras = $ex->getErrors();
+                $this->logByException($ex, __METHOD__, json_encode($ex->getErrors()));
                 throw new UnrecoverableMessageHandlingException();
             }
-            $this->logByException($ex, __METHOD__, json_encode($extras));
+            $this->logByException($ex, __METHOD__);
             throw $ex;
         }
-        $messageStr = 'massive insertion success [job_id:'.$message->getId().']';
+        $messageStr = 'massive insertion success [job_id:' . $message->getId() . ']';
         $this->logDebug($messageStr, __METHOD__, $this->serialize($message->getSellers()));
     }
 }

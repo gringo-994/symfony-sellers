@@ -16,26 +16,47 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class SellerFactoryManager extends AbstractManager implements SellerFactoryManagerInterface
 {
+    /**
+     * @var SellerManagerHttpInterface|SellerManagerInterface
+     */
     private SellerManagerInterface $sellerManagerHttp;
 
+    /**
+     * @var SellerEntityManagerInterface|SellerManagerInterface
+     */
     private SellerManagerInterface $sellerEntityManager;
 
+    /**
+     * @var SellerManagerRequestAndStoreInterface|SellerManagerInterface
+     */
     private SellerManagerInterface $sellerManagerRequestAndStore;
 
+    /**
+     * SellerFactoryManager constructor.
+     * @param ValidatorInterface $validator
+     * @param LoggerInterface $logger
+     * @param SerializerInterface $serializer
+     * @param SellerManagerHttpInterface $sellerManagerHttp
+     * @param SellerEntityManagerInterface $sellerEntityManager
+     * @param SellerManagerRequestAndStoreInterface $sellerManagerRequestAndStore
+     */
     public function __construct(
         ValidatorInterface $validator,
         LoggerInterface $logger,
         SerializerInterface $serializer,
         SellerManagerHttpInterface $sellerManagerHttp,
         SellerEntityManagerInterface $sellerEntityManager,
-        SellerManagerRequestAndStoreInterface $sellerManagerRequestAndStore)
-    {
+        SellerManagerRequestAndStoreInterface $sellerManagerRequestAndStore
+    ) {
         parent::__construct($validator, $logger, $serializer);
         $this->sellerManagerHttp = $sellerManagerHttp;
         $this->sellerEntityManager = $sellerEntityManager;
         $this->sellerManagerRequestAndStore = $sellerManagerRequestAndStore;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(string $origin): SellerManagerInterface
     {
         switch ($origin) {
@@ -45,9 +66,8 @@ class SellerFactoryManager extends AbstractManager implements SellerFactoryManag
                 return $this->sellerManagerHttp;
             case SellerFactoryManagerInterface::PERSIST_SELLER_FROM_REMOTE:
                 return $this->sellerManagerRequestAndStore;
-                break;
             default:
-                throw new LogicException('origin:'.$origin.' is not defined');
+                throw new LogicException('origin:' . $origin . ' is not defined');
         }
     }
 }

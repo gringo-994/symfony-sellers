@@ -15,20 +15,31 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 abstract class AbstractEntityManager extends AbstractManager implements ManagerEntityInterface
 {
-    private EntityManagerInterface $em;
+    /**
+     * @var EntityManagerInterface
+     */
+    protected EntityManagerInterface $em;
 
-    private string $classEntity;
+    /**
+     * @var string
+     */
+    protected string $classEntity;
 
     /**
      * AbstractEntityManager constructor.
+     * @param ValidatorInterface $validator
+     * @param LoggerInterface $logger
+     * @param EntityManagerInterface $em
+     * @param SerializerInterface $serializer
+     * @param string $classEntity
      */
     public function __construct(
         ValidatorInterface $validator,
         LoggerInterface $logger,
         EntityManagerInterface $em,
         SerializerInterface $serializer,
-        string $classEntity)
-    {
+        string $classEntity
+    ) {
         parent::__construct($validator, $logger, $serializer);
         $this->em = $em;
         $this->classEntity = $classEntity;

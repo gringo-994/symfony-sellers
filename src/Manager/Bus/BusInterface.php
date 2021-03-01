@@ -8,5 +8,8 @@ use App\Message\MessageBusAppInterface;
 
 interface BusInterface
 {
+    /**
+     * @param MessageBusAppInterface $message
+     */
     public function dispatch(MessageBusAppInterface $message): void;
 }

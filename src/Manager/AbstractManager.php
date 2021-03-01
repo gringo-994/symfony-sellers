@@ -17,10 +17,16 @@ abstract class AbstractManager implements ManagerInterface, SerializerAppInterfa
     use LoggerTrait;
     use SerializerTrait;
 
+    /**
+     * @var ValidatorInterface
+     */
     protected ValidatorInterface $validator;
 
     /**
      * AbstractManager constructor.
+     * @param ValidatorInterface $validator
+     * @param LoggerInterface $logger
+     * @param SerializerInterface $serializer
      */
     public function __construct(ValidatorInterface $validator, LoggerInterface $logger, SerializerInterface $serializer)
     {

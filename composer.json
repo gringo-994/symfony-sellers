@@ -78,15 +78,6 @@
     "db:update": [
       "bin/console doctrine:schema:update --force"
     ],
-    "format:phpcs-fix": [
-      "vendor/bin/php-cs-fixer fix"
-    ],
-    "format:phpcs": [
-      "vendor/bin/phpcs --standard=PSR12"
-    ],
-    "format:phpcbf": [
-      "vendor/bin/phpcbf --standard=PSR12"
-    ],
     "messenger:consume:seller": [
       "symfony run -d --watch=config,src,templates,vendor symfony console messenger:consume async_seller_update async --limit=10 --memory-limit=128M --time-limit=3600"
     ],
@@ -114,8 +105,6 @@
     }
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.18",
-    "squizlabs/php_codesniffer": "^3.5",
     "symfony/maker-bundle": "^1.26",
     "symfony/phpunit-bridge": "^5.2"
   }

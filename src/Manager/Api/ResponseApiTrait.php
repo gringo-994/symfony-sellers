@@ -18,8 +18,8 @@ trait ResponseApiTrait
         $data = null,
         int $code = Response::HTTP_OK,
         string $message = 'success',
-        $type = 'json'): Response
-    {
+        $type = 'json'
+    ): Response {
         return $this->response($data, $code, $message, $type);
     }
 
@@ -30,23 +30,24 @@ trait ResponseApiTrait
         $data = null,
         int $code = Response::HTTP_BAD_REQUEST,
         string $message = 'failed',
-        $type = 'json'): Response
-    {
+        $type = 'json'
+    ): Response {
         return $this->response($data, $code, $message, $type);
     }
 
     /**
-     * @param null   $data
+     * @param null $data
+     * @param int $code
+     * @param string $message
      * @param string $type
-     *
      * @return JsonResponse
      */
     public function response(
         $data = null,
         int $code = Response::HTTP_OK,
         string $message = 'success',
-        $type = 'json')
-    {
+        $type = 'json'
+    ) {
         switch ($type) {
             case ResponseApiInterface::TYPE_JSON:
                 return new JsonResponse(
@@ -56,7 +57,7 @@ trait ResponseApiTrait
                     true
                 );
             default:
-                throw new LogicException('type:'.$type.' is not defined');
+                throw new LogicException('type:' . $type . ' is not defined');
         }
     }
 }

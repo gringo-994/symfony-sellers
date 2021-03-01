@@ -16,3 +16,7 @@ terminal:
 	docker-compose exec php sh
 test:
 	docker-compose exec php composer run-script test:phpunit:no-cache
+format-cs:
+	phpcs --standard=PSR12 ./src/
+format-cbf:
+	phpcbf --standard=PSR12 ./src/

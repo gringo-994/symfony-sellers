@@ -9,6 +9,9 @@ use Symfony\Component\Messenger\MessageBusInterface;
 
 trait BusTrait
 {
+    /**
+     * @var MessageBusInterface
+     */
     protected MessageBusInterface $bus;
 
     /**

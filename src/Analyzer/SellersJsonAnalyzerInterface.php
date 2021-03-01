@@ -11,6 +11,7 @@ interface SellersJsonAnalyzerInterface
 {
     /**
      * Analyze and store data on sellers.json.
+     * @param array $associativeSellersJson
      */
     public function analyze(array $associativeSellersJson): void;
 }

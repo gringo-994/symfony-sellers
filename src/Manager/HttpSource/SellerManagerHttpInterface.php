@@ -10,6 +10,7 @@ use App\Manager\SellerManagerInterface;
 interface SellerManagerHttpInterface extends SellerManagerInterface
 {
     /**
+     * @param string $domain
      * @return Seller[]
      */
     public function requestSellersDomain(string $domain): array;

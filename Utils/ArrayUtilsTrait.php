@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+namespace App\Utils;
+
 use App\Exception\ArrayException;
+use OutOfRangeException;
 
 trait ArrayUtilsTrait
 {
@@ -16,6 +19,7 @@ trait ArrayUtilsTrait
 
     /**
      * {@inheritdoc}
+     * @throws ArrayException
      */
     public static function getValueOrError(array $data, string $key)
     {
@@ -27,6 +31,7 @@ trait ArrayUtilsTrait
 
     /**
      * {@inheritdoc}
+     * @throws ArrayException
      */
     public static function getBooleanOrError(array $data, string $key)
     {
@@ -39,6 +44,7 @@ trait ArrayUtilsTrait
 
     /**
      * {@inheritdoc}
+     * @throws ArrayException
      */
     public static function getBooleanOrDefault(array $data, string $key, $default)
     {

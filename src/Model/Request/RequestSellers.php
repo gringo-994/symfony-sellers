@@ -14,6 +14,7 @@ class RequestSellers implements RequestInterface
 
     /**
      * RequestSellers constructor.
+     * @param string $domain
      */
     public function __construct(string $domain)
     {

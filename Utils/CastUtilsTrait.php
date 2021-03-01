@@ -2,10 +2,15 @@
 
 declare(strict_types=1);
 
+namespace App\Utils;
+
+use OutOfRangeException;
+
 trait CastUtilsTrait
 {
     /**
      * {@inheritdoc}
+     * @throws OutOfRangeException
      */
     public static function castIntegerToBoolean(int $value): bool
     {

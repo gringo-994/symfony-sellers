@@ -6,26 +6,41 @@ namespace App\Manager\HttpSource\Client\Endpoint;
 
 class EndpointSeller extends AbstractEndpoint
 {
+    /**
+     * {@inheritDoc}
+     */
     public function buildUri(): string
     {
         return '/sellers.json';
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getMethod(): string
     {
         return 'GET';
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getHeaders(): array
     {
         return ['Content-Type' => 'application/json'];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getOptions(): array
     {
         return ['allow_redirects' => true];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getMock(): string
     {
         return <<<MOCK
