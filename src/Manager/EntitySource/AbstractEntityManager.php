@@ -109,6 +109,18 @@ abstract class AbstractEntityManager extends AbstractManager implements ManagerE
     {
         $this->em->flush();
     }
+    /**
+     *{@inheritDoc}
+     */
+    public function findOneBy(array $expression): ?EntityInterface
+    {
+        $repository = $this->em->getRepository($this->classEntity);
+        $obj = $repository->findOneBy($expression);
+        if ($obj instanceof EntityInterface) {
+            return $obj;
+        }
+        throw new LogicException('the entity must implements EntityInterface');
+    }
 
     /**
      *{@inheritDoc}

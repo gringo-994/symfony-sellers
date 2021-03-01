@@ -24,7 +24,7 @@ final class SellersController extends AbstractApiController implements SellersCo
     public function __construct(SerializerInterface $serializer, SellerFactoryManagerInterface $factoryManager)
     {
         parent::__construct($serializer);
-        $this->sellerManager = $factoryManager->create(SellerFactoryManagerInterface::PERSIST_SELLER_FROM_REMOTE);
+        $this->sellerManager = $factoryManager->create(SellerFactoryManagerInterface::PERSIST_REMOTE_SELLERS);
     }
 
     /**

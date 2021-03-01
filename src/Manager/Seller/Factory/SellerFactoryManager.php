@@ -60,11 +60,11 @@ final class SellerFactoryManager extends AbstractManager implements SellerFactor
     public function create(string $origin): SellerManagerInterface
     {
         switch ($origin) {
-            case SellerFactoryManagerInterface::SELLER_FROM_DB:
+            case SellerFactoryManagerInterface::DB_SELLERS:
                 return $this->sellerEntityManager;
-            case SellerFactoryManagerInterface::SELLER_FROM_REMOTE:
+            case SellerFactoryManagerInterface::REMOTE_SELLERS:
                 return $this->sellerManagerHttp;
-            case SellerFactoryManagerInterface::PERSIST_SELLER_FROM_REMOTE:
+            case SellerFactoryManagerInterface::PERSIST_REMOTE_SELLERS:
                 return $this->sellerManagerRequestAndStore;
             default:
                 throw new LogicException('origin:' . $origin . ' is not defined');

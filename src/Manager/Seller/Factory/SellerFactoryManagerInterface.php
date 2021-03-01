@@ -6,9 +6,9 @@ use App\Manager\SellerManagerInterface;
 
 interface SellerFactoryManagerInterface
 {
-    public const SELLER_FROM_REMOTE = 'request_seller_from_remote';
-    public const SELLER_FROM_DB = 'request_seller_from_db';
-    public const PERSIST_SELLER_FROM_REMOTE = 'persist_request_seller_from_remote';
+    public const REMOTE_SELLERS = 'remote_sellers';
+    public const DB_SELLERS = 'db_sellers';
+    public const PERSIST_REMOTE_SELLERS = 'persist_remote_sellers';
 
     /**
      * @param string $origin

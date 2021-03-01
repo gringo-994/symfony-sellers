@@ -27,6 +27,7 @@ interface ManagerEntityInterface
 
     /**
      * @param $id
+     * @return EntityInterface|null
      */
     public function find($id): ?EntityInterface;
 
@@ -37,6 +38,12 @@ interface ManagerEntityInterface
     public function matching(Criteria $query): array;
 
     /**
+     * @param array $expression
+     * @return EntityInterface|null
+     */
+    public function findOneBy(array $expression): ?EntityInterface;
+
+    /**
      * @param EntityInterface $entity
      * @param false $flush
      *
@@ -45,7 +52,13 @@ interface ManagerEntityInterface
      */
     public function persist(EntityInterface $entity, $flush = false): EntityInterface;
 
+    /**
+     * void
+     */
     public function flush(): void;
 
+    /**
+     * @param EntityInterface $entity
+     */
     public function remove(EntityInterface $entity): void;
 }

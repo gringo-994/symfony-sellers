@@ -57,8 +57,29 @@ final class SellerManager extends AbstractEntityManager implements SellerEntityM
     public function massiveInsertion(array $sellers): void
     {
         foreach ($sellers as $seller) {
+            /**@var Seller $sellerFind */
+            $sellerFind = $this->findOneBy(array('sellerId', $seller->getSellerId()));
+            if ($sellerFind !== null) {
+                $this->updateSellerObject($seller, $sellerFind);
+            }
             $this->persist($seller, false);
         }
         $this->flush();
+    }
+
+    /**
+     * @param Seller $seller
+     * @param Seller $sellerUpdate
+     */
+    private function updateSellerObject(Seller $seller, Seller $sellerUpdate)
+    {
+        $seller->setSellerId($sellerUpdate->getSellerId());
+        $seller->setSellerType($sellerUpdate->getSellerType());
+        $seller->setIsConfidential($sellerUpdate->isConfidential());
+        $seller->setIsPassthrough($sellerUpdate->isPassthrough());
+        $seller->setName($sellerUpdate->getName());
+        $seller->setDomain($sellerUpdate->getDomain());
+        $seller->setComment($sellerUpdate->getComment());
+        $seller->setExt($sellerUpdate->getExt());
     }
 }
