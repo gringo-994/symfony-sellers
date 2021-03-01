@@ -5,30 +5,36 @@ declare(strict_types=1);
 namespace App\Serializer\Normalizer;
 
 use App\Logger\LoggerTrait;
-use App\Serializer\SerializerAppInterface;
-use App\Serializer\SerializerTrait;
+use App\Serializer\NormalizerContextInterface;
 use App\Utils\ArrayUtilsInterface;
 use App\Utils\ArrayUtilsTrait;
 use App\Utils\CastUtilsInterface;
 use App\Utils\CastUtilsTrait;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
+use Symfony\Component\Serializer\SerializerAwareTrait;
 
-abstract class AbstractNormalizer implements SerializerAppInterface, ArrayUtilsInterface, CastUtilsInterface
+abstract class AbstractNormalizer implements ArrayUtilsInterface, CastUtilsInterface
 {
-    use SerializerTrait;
     use ArrayUtilsTrait;
     use CastUtilsTrait;
     use LoggerTrait;
+    use DenormalizerAwareTrait;
+    use SerializerAwareTrait;
+
+    /**
+     * @var NormalizerContextInterface
+     */
+    protected NormalizerContextInterface $normalizerContext;
 
     /**
      * AbstractSerializer constructor.
-     * @param SerializerInterface $serializer
      * @param LoggerInterface $logger
+     * @param NormalizerContextInterface $normalizerContext
      */
-    public function __construct(SerializerInterface $serializer, LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger, NormalizerContextInterface $normalizerContext)
     {
         $this->logger = $logger;
-        $this->serializer = $serializer;
+        $this->normalizerContext = $normalizerContext;
     }
 }

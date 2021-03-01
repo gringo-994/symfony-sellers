@@ -41,7 +41,9 @@ final class MiddlewareListener extends AbstractListener
         } elseif ($e instanceof HttpExceptionInterface) {
             $response = $this->responseError(null, $e->getStatusCode());
         } elseif ($e instanceof Exception) {
-            $response = $this->responseError(null, Response::HTTP_INTERNAL_SERVER_ERROR);
+            if (getenv('APP_DEBUG_ENV') === 'false') {
+                $response = $this->responseError(null, Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
         }
 
         if (null != $response) {

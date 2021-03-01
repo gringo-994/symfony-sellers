@@ -7,7 +7,7 @@ use App\Serializer\SerializerTrait;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
-class AbstractMessageHandler
+abstract class AbstractMessageHandler
 {
     use LoggerTrait;
     use SerializerTrait;

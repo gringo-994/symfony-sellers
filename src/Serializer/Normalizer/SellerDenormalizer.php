@@ -7,10 +7,16 @@ namespace App\Serializer\Normalizer;
 use App\Entity\Seller;
 use App\Exception\ArrayException;
 use App\Exception\ValidationException;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
-final class SellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
+final class SellerDenormalizer extends AbstractNormalizer implements
+    DenormalizerInterface,
+    DenormalizerAwareInterface
 {
+    use DenormalizerAwareTrait;
+
     /**
      * {@inheritdoc}
      *

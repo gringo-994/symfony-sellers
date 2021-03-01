@@ -33,7 +33,7 @@ trait ArrayUtilsTrait
      * {@inheritdoc}
      * @throws ArrayException
      */
-    public static function getBooleanOrError(array $data, string $key)
+    public static function getBooleanOrError(array $data, string $key): bool
     {
         try {
             return self::castIntegerToBoolean(self::getValueOrError($data, $key));
@@ -46,7 +46,7 @@ trait ArrayUtilsTrait
      * {@inheritdoc}
      * @throws ArrayException
      */
-    public static function getBooleanOrDefault(array $data, string $key, $default)
+    public static function getBooleanOrDefault(array $data, string $key, $default): bool
     {
         try {
             return self::castIntegerToBoolean(self::getValueOrDefault($data, $key, $default));

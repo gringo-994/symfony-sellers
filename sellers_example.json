@@ -1,49 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-namespace App\Manager\HttpSource\Client\Endpoint;
-
-final class EndpointSeller extends AbstractEndpoint
-{
-    /**
-     * {@inheritDoc}
-     */
-    public function buildUri(): string
-    {
-        return '/sellers.json';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getMethod(): string
-    {
-        return 'GET';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getHeaders(): array
-    {
-        return ['Content-Type' => 'application/json'];
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getOptions(): array
-    {
-        return ['allow_redirects' => true];
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getMock(): string
-    {
-        return <<<MOCK
 {
   "contact_email": "adops@advertisingsystem.com",
   "contact_address": "Advertising System Inc., 101 Main Street, New York, NY 10101",
@@ -110,7 +64,4 @@ final class EndpointSeller extends AbstractEndpoint
       "relationship":"with Passthrough Publisher"
     }
   ]
-}
-MOCK;
-    }
 }

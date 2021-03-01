@@ -31,12 +31,15 @@ services:
           - php.internal
     volumes:
       - $PWD:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     working_dir: /var/www
     environment:
       SYMFONY_APP_PATH: .
       TIMEZONE: Europe/Rome
-      XDEBUG_CONFIG: remote_host=host.docker.internal
-      PHP_IDE_CONFIG: serverName=localhost
+      XDEBUG_CONFIG: remote_host=192.168.1.124 remote_port=9000 remote_enable=1 idekey=PHPSTORM remote_autostart=1 remote_connect_back=0
+      PHP_IDE_CONFIG: serverName=PHPSERVERNAME
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
   ###########
   # MariaDB #
   ###########

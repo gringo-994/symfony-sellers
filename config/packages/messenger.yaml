@@ -21,4 +21,4 @@ framework:
 
         routing:
             # Route your messages to the transports
-            'App\Message\MessageBusAppInterface': async
+            'App\Message\SellerUpdateMessage': async

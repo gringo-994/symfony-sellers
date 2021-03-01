@@ -10,7 +10,11 @@ use App\Manager\HttpSource\Client\Factory\ClientFactoryInterface;
 use App\Model\Request\RequestInterface;
 use App\Serializer\SerializeInterface;
 use Exception;
+use GuzzleHttp\Exception\BadResponseException;
+use LogicException;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -51,11 +55,20 @@ abstract class AbstractHttpManager extends AbstractManager implements MangerHttp
             $client = $this->clientFactory->create($request);
             $service = $request->getClientService();
             $response = $client->$service($request->getPathParams(), $request->getQueryParams());
-
-            $objResponse = $this->deserialize($response, $request->getModel());
+            if ($response instanceof ResponseInterface) {
+                $objResponse = $this->deserialize($response->getBody(), $request->getModel());
+            } else {
+                throw new LogicException('service must return object that implements:' . ResponseInterface::class);
+            }
             $this->handleValidation($objResponse);
 
             return $objResponse;
+        } catch (BadResponseException $ex) {
+            $this->logByException($ex, __METHOD__);
+            if ($ignoreExceptions) {
+                return null;
+            }
+            throw new HttpException($ex->getResponse()->getStatusCode(), 'invalid server or endpoint');
         } catch (Exception $ex) {
             $extras = [];
             if ($ex instanceof ValidationException) {

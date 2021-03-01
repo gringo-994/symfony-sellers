@@ -58,9 +58,9 @@ final class SellerManager extends AbstractEntityManager implements SellerEntityM
     {
         foreach ($sellers as $seller) {
             /**@var Seller $sellerFind */
-            $sellerFind = $this->findOneBy(array('sellerId', $seller->getSellerId()));
+            $sellerFind = $this->findOneBy(array('sellerId' => $seller->getSellerId()));
             if ($sellerFind !== null) {
-                $this->updateSellerObject($seller, $sellerFind);
+                $seller = $this->updateSellerObject($sellerFind, $seller);
             }
             $this->persist($seller, false);
         }
@@ -70,6 +70,7 @@ final class SellerManager extends AbstractEntityManager implements SellerEntityM
     /**
      * @param Seller $seller
      * @param Seller $sellerUpdate
+     * @return Seller
      */
     private function updateSellerObject(Seller $seller, Seller $sellerUpdate)
     {
@@ -81,5 +82,7 @@ final class SellerManager extends AbstractEntityManager implements SellerEntityM
         $seller->setDomain($sellerUpdate->getDomain());
         $seller->setComment($sellerUpdate->getComment());
         $seller->setExt($sellerUpdate->getExt());
+
+        return $seller;
     }
 }

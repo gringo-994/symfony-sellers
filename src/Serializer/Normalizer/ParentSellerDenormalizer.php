@@ -8,10 +8,14 @@ use App\Entity\Seller;
 use App\Exception\ArrayException;
 use App\Exception\ValidationException;
 use App\Model\Response\SellerResponse;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
-final class ParentSellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
+final class ParentSellerDenormalizer extends AbstractNormalizer implements
+    DenormalizerInterface,
+    DenormalizerAwareInterface
 {
+
     /**
      * {@inheritdoc}
      *
@@ -25,8 +29,10 @@ final class ParentSellerDenormalizer extends AbstractNormalizer implements Denor
             $obj->setContactEmail(self::getValueOrNull($data, 'contact_email'));
             $obj->setContactAddress(self::getValueOrNull($data, 'contact_address'));
             $obj->setVersion(self::getValueOrError($data, 'version'));
-
-            $sellers = $this->deserialize(self::getValueOrError($data, 'sellers'), Seller::class);
+            $sellers = [];
+            foreach (self::getValueOrError($data, 'sellers') as $seller) {
+                $sellers[] = $this->denormalizer->denormalize($seller, Seller::class, 'json');
+            }
             $obj->setSellers($sellers);
         } catch (ArrayException $e) {
             throw new ValidationException($e->getErrors());

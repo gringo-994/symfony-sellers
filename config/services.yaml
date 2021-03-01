@@ -31,8 +31,23 @@ services:
     tags:
       - { name: kernel.event_subscriber }
     arguments: ['@serializer']
-  #interfaces  factory implementations
+  # context normalizer handler
+  context.normalizer:
+    class: App\Serializer\NormalizerContext
+  # strategy normalizers
+  response_api_normalizer:
+    class: App\Serializer\Normalizer\ResponseApiNormalizer
+    tags:
+      - { name: strategy_normalizer }
+  seller_normalizer:
+    class: App\Serializer\Normalizer\SellerNormalizer
+    tags:
+      - { name: strategy_normalizer }
+  #Normalizers strategies
 
+  #Intrfaces Context strategies
+  App\Serializer\NormalizerContextInterface: '@context.normalizer'
+  #interfaces  factory implementations
   App\Manager\Seller\Factory\SellerFactoryManagerInterface: '@App\Manager\Seller\Factory\SellerFactoryManager'
   App\Manager\HttpSource\Client\ClientFactoryInterface: '@App\Manager\HttpSource\Client\Factory\ClientFactory'
 
@@ -40,6 +55,5 @@ services:
   App\Manager\EntitySource\SellerEntityManagerInterface: '@App\Manager\EntitySource\SellerManager'
   App\Manager\HttpSource\SellerEntityManagerInterface: '@App\Manager\HttpSource\SellerManager'
   App\Manager\Seller\SellerManagerRequestAndStoreInterface: '@App\Manager\Seller\SellerManager'
-
   # add more service definitions when explicit configuration is needed
   # please note that last definitions always *replace* previous ones

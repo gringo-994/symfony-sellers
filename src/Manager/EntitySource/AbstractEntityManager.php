@@ -94,7 +94,7 @@ abstract class AbstractEntityManager extends AbstractManager implements ManagerE
     public function persist(EntityInterface $entity, $flush = false): EntityInterface
     {
         $this->handleValidation($entity);
-
+        $this->em->persist($entity);
         if ($flush) {
             $this->em->flush();
         }
@@ -109,6 +109,7 @@ abstract class AbstractEntityManager extends AbstractManager implements ManagerE
     {
         $this->em->flush();
     }
+
     /**
      *{@inheritDoc}
      */
@@ -116,7 +117,7 @@ abstract class AbstractEntityManager extends AbstractManager implements ManagerE
     {
         $repository = $this->em->getRepository($this->classEntity);
         $obj = $repository->findOneBy($expression);
-        if ($obj instanceof EntityInterface) {
+        if ($obj === null || $obj instanceof EntityInterface) {
             return $obj;
         }
         throw new LogicException('the entity must implements EntityInterface');

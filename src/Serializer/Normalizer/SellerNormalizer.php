@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace App\Serializer\Normalizer;
 
 use App\Entity\Seller;
+use Symfony\Component\Serializer\Encoder\NormalizationAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-final class SellerNormalizer extends AbstractNormalizer implements NormalizerInterface
+final class SellerNormalizer extends AbstractNormalizer implements NormalizerInterface, NormalizationAwareInterface
 {
 
     /**

@@ -10,9 +10,10 @@ use App\Message\SellerUpdateMessage;
 use Exception;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
+use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
-final class SellerUpdateHandler extends AbstractMessageHandler
+final class SellerUpdateHandler extends AbstractMessageHandler implements MessageHandlerInterface
 {
     private SellerEntityManagerInterface $sellerEntityManager;
 
