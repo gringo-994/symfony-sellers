@@ -9,7 +9,7 @@ use App\Globals\Globals;
 use App\Serializer\SerializeInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class SellerResponse implements SerializeInterface
+final class SellerResponse implements SerializeInterface
 {
     /**
      * @Assert\Valid

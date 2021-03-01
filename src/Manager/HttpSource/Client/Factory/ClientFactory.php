@@ -11,7 +11,7 @@ use App\Model\Request\RequestInterface;
 use App\Model\Request\RequestSellers;
 use LogicException;
 
-class ClientFactory implements ClientFactoryInterface
+final class ClientFactory implements ClientFactoryInterface
 {
     /**
      * {@inheritDoc}

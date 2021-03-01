@@ -13,7 +13,7 @@ use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class SellerManager extends AbstractManager implements SellerManagerRequestAndStoreInterface, BusInterface
+final class SellerManager extends AbstractManager implements SellerManagerRequestAndStoreInterface, BusInterface
 {
     use SellerManagerTrait;
     use BusTrait;

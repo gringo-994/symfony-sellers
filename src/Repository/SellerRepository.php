@@ -11,7 +11,7 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * SellerRepository.
  */
-class SellerRepository extends ServiceEntityRepository
+final class SellerRepository extends ServiceEntityRepository
 {
     /**
      * Constructor.

@@ -12,7 +12,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class SellerManager extends AbstractEntityManager implements SellerEntityManagerInterface
+final class SellerManager extends AbstractEntityManager implements SellerEntityManagerInterface
 {
     /**
      * SellerManager constructor.

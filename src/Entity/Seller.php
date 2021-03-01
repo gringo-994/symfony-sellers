@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Entity(repositoryClass=SellerRepository::class)
  */
-class Seller implements SerializeInterface, EntityInterface
+final class Seller implements SerializeInterface, EntityInterface
 {
     /**
      * @var int

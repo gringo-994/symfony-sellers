@@ -7,7 +7,7 @@ namespace App\Serializer\Normalizer;
 use App\Entity\Seller;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class SellerNormalizer extends AbstractNormalizer implements NormalizerInterface
+final class SellerNormalizer extends AbstractNormalizer implements NormalizerInterface
 {
 
     /**

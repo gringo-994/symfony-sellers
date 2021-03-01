@@ -8,7 +8,7 @@ use App\Manager\HttpSource\Client\ClientSellerInterface;
 use App\Manager\HttpSource\Client\Factory\ClientFactoryInterface;
 use App\Model\Response\SellerResponse;
 
-class RequestSellers implements RequestInterface
+final class RequestSellers implements RequestInterface
 {
     private string $domain;
 

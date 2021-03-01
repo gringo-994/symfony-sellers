@@ -8,7 +8,7 @@ use App\Manager\HttpSource\Client\Connect\ConnectInterface;
 use App\Manager\HttpSource\Client\Endpoint\EndpointSeller;
 use Psr\Http\Message\ResponseInterface;
 
-class ClientSeller extends AbstractClient implements ClientSellerInterface
+final class ClientSeller extends AbstractClient implements ClientSellerInterface
 {
     /**
      * ClientSeller constructor.

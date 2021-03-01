@@ -12,7 +12,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
 use Symfony\Component\Serializer\SerializerInterface;
 
-class SellerUpdateHandler extends AbstractMessageHandler
+final class SellerUpdateHandler extends AbstractMessageHandler
 {
     private SellerEntityManagerInterface $sellerEntityManager;
 

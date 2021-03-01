@@ -9,7 +9,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 
-class Connect implements ConnectInterface
+final class Connect implements ConnectInterface
 {
     /**
      * @var string

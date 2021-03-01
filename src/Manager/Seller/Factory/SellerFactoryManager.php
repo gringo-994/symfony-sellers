@@ -14,7 +14,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class SellerFactoryManager extends AbstractManager implements SellerFactoryManagerInterface
+final class SellerFactoryManager extends AbstractManager implements SellerFactoryManagerInterface
 {
     /**
      * @var SellerManagerHttpInterface|SellerManagerInterface

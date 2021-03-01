@@ -10,7 +10,7 @@ use App\Exception\ValidationException;
 use App\Model\Response\SellerResponse;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
-class ParentSellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
+final class ParentSellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
 {
     /**
      * {@inheritdoc}

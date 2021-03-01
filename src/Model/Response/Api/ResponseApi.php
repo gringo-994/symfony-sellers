@@ -6,7 +6,7 @@ namespace App\Model\Response\Api;
 
 use App\Serializer\SerializeInterface;
 
-class ResponseApi implements SerializeInterface
+final class ResponseApi implements SerializeInterface
 {
     private int $status;
 

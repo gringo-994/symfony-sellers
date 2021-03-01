@@ -8,7 +8,7 @@ use App\Exception\ValidationException;
 use App\Model\Request\RequestSellers;
 use App\Model\Response\SellerResponse;
 
-class SellerManager extends AbstractHttpManager implements SellerManagerHttpInterface
+final class SellerManager extends AbstractHttpManager implements SellerManagerHttpInterface
 {
     /**
      * {@inheritDoc}

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route as Rest;
 use Symfony\Component\Serializer\SerializerInterface;
 
-class SellersController extends AbstractApiController implements SellersControllerInterface
+final class SellersController extends AbstractApiController implements SellersControllerInterface
 {
     use SellerManagerTrait;
 

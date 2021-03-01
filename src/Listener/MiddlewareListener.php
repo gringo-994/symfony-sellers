@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-class MiddlewareListener extends AbstractListener
+final class MiddlewareListener extends AbstractListener
 {
     /**
      * @return array[]

@@ -7,7 +7,7 @@ namespace App\Serializer\Normalizer;
 use App\Model\Response\Api\ResponseApi;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class ResponseApiNormalizer extends AbstractNormalizer implements NormalizerInterface
+final class ResponseApiNormalizer extends AbstractNormalizer implements NormalizerInterface
 {
     /**
      * {@inheritdoc}

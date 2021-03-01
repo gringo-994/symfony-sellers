@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Manager\HttpSource\Client\Endpoint;
 
-class EndpointSeller extends AbstractEndpoint
+final class EndpointSeller extends AbstractEndpoint
 {
     /**
      * {@inheritDoc}

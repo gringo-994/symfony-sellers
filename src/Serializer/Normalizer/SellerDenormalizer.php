@@ -9,7 +9,7 @@ use App\Exception\ArrayException;
 use App\Exception\ValidationException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
-class SellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
+final class SellerDenormalizer extends AbstractNormalizer implements DenormalizerInterface
 {
     /**
      * {@inheritdoc}
