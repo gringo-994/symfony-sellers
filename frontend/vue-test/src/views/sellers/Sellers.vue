@@ -5,7 +5,7 @@
       <div v-if="errors.length">
         <b>Please correct the following error(s):</b>
         <ul>
-          <li  v-for="(error, i) in errors" v-bind:key="i">{{ error }}</li>
+          <li v-for="(error, i) in errors" v-bind:key="i">{{ error }}</li>
         </ul>
       </div>
       <div class="form-group">
@@ -34,6 +34,7 @@
 <script>
 import Table from '../base/Table'
 import axios from 'axios'
+import {SELLERS} from "../../repository/endpoint";
 
 export default {
   name: 'Sellers',
@@ -45,10 +46,10 @@ export default {
     fields: ['id', 'seller_id', 'is_confidential', 'is_passthrough', 'seller_type', 'name', 'domain', 'comment', 'ext']
   }),
   methods: {
-    async onSubmit () {
+    async onSubmit() {
       if (this.isValidDomain(this.domain)) {
         try {
-          let response = await axios.get('sellers/check-in', {params: {domain: this.domain}})
+          let response = await axios.get(SELLERS, {params: {domain: this.domain}})
           console.log('start');
           this.sellers = this.getData(response.data)
         } catch (error) {
@@ -66,14 +67,14 @@ export default {
       }
       this.clearForm()
     },
-    clearForm () {
+    clearForm() {
       this.name = ''
       this.score = ''
     },
-    getData (response) {
+    getData(response) {
       return response.data
     },
-    isValidDomain (domain) {
+    isValidDomain(domain) {
       if (domain === null || domain === '') {
         this.errors.push('domain is required')
         return false;
