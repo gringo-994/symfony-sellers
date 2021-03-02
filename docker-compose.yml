@@ -31,7 +31,7 @@ services:
           - php.internal
     volumes:
       - $PWD:/var/www
-      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ${PWD}/docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     working_dir: /var/www
     environment:
       SYMFONY_APP_PATH: .
@@ -40,6 +40,25 @@ services:
       PHP_IDE_CONFIG: serverName=PHPSERVERNAME
       SERVICE_NAME: app
       SERVICE_TAGS: dev
+  ###########
+  # Node #
+  ###########
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./docker/node/Dockerfile
+    working_dir: /app
+    volumes:
+      - ./frontend/vue-test:/app
+    environment:
+      NODE_ENV: development
+    networks:
+      internal:
+        aliases:
+          - php.internal
+    ports:
+      - 8080:80
+
   ###########
   # MariaDB #
   ###########

@@ -11,7 +11,7 @@ final class EndpointSeller extends AbstractEndpoint
      */
     public function buildUri(): string
     {
-        return '/sellers.json';
+        return 'sellers.json';
     }
 
     /**

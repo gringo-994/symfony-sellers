@@ -37,7 +37,7 @@ final class MiddlewareListener extends AbstractListener
         $response = null;
 
         if ($e instanceof ValidationException) {
-            $response = $this->responseError(json_encode($e->getErrors()));
+            $response = $this->responseError($this->serialize($e->getErrors()));
         } elseif ($e instanceof HttpExceptionInterface) {
             $response = $this->responseError(null, $e->getStatusCode());
         } elseif ($e instanceof Exception) {

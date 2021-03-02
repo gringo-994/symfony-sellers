@@ -59,7 +59,6 @@ final class Seller implements SerializeInterface, EntityInterface
     private ?string $name;
     /**
      * @var string|null
-     * @Assert\Expression("not(!this.isConfidential() and this.getDomain()==null)")
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private ?string $domain;

@@ -28,9 +28,9 @@ final class Connect implements ConnectInterface
     /**
      * {@inheritDoc}
      */
-    public function createClient(int $timeout = 15): ClientInterface
+    public function createClient(int $timeout = 30): ClientInterface
     {
-        return new Client(['base_uri' => $this->host, 'timeout' => $timeout]);
+        return new Client(['base_uri' => $this->host . '/', 'timeout' => $timeout]);
     }
 
     /**
@@ -51,7 +51,6 @@ final class Connect implements ConnectInterface
         if (!empty($query)) {
             $options['query'] = $query;
         }
-
         return $this->createClient()->request($method, $uri, $options);
     }
 }
